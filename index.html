@@ -1,126 +1,1043 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="scroll-smooth selection:bg-secondary-orange selection:text-white">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Camila Rocha | Nutricionista</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/your-favicon.png" type="image/png"> <!-- Substitua pela URL do seu favicon -->
+    
+    <!-- Meta Tags para SEO e Compartilhamento Social -->
+    <meta name="description" content="Recupere sua saúde e autoestima com o método de emagrecimento da Dra. Camila Rocha. Orientação médica especializada, resultados comprovados e sem dietas restritivas.">
+    <meta name="keywords" content="emagrecimento, saúde, autoestima, Dra. Camila Rocha, método científico, dieta, nutrição, bem-estar, longevidade">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.seusite.com.br/"> <!-- Substitua pela URL da sua landing page -->
+    <meta property="og:title" content="Emagrecimento Saudável | Dra. Camila Rocha">
+    <meta property="og:description" content="Recupere sua saúde e autoestima com o método de emagrecimento da Dra. Camila Rocha. Orientação médica especializada, resultados comprovados e sem dietas restritivas.">
+    <meta property="og:image" content="https://i.imgur.com/your-og-image.jpg"> <!-- Substitua pela URL de uma imagem atraente para compartilhamento -->
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.seusite.com.br/"> <!-- Substitua pela URL da sua landing page -->
+    <meta property="twitter:title" content="Emagrecimento Saudável | Dra. Camila Rocha">
+    <meta property="twitter:description" content="Recupere sua saúde e autoestima com o método de emagrecimento da Dra. Camila Rocha. Orientação médica especializada, resultados comprovados e sem dietas restritivas.">
+    <meta property="twitter:image" content="https://i.imgur.com/your-twitter-image.jpg"> <!-- Substitua pela URL de uma imagem atraente para compartilhamento -->
+    <title>Emagrecimento Saudável | Dra. Camila Rocha</title>
+    
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            green: '#065f46',
+                            dark: '#052e16',
+                        },
+                        secondary: {
+                            orange: '#f97316',
+                        },
+                        neutral: {
+                            light: '#f9fafb',
+                            border: '#e5e7eb',
+                            text: '#1f2937',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; }
-        
-        .bg-pattern {
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2310b981' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        /* Custom Cursor */
+        body { 
+            cursor: none; 
+            /* Global smooth transitions for interactive elements */
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+        }
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            background: rgba(6, 95, 70, 0.3);
+            border: 2px solid #065f46;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease-out, background 0.3s ease;
+            transform: translate(-50%, -50%);
+        }
+        .custom-cursor.hover {
+            transform: translate(-50%, -50%) scale(2.5);
+            background: rgba(249, 115, 22, 0.2);
+            border-color: #f97316;
+        }
+
+        /* Animated Hero Gradient */
+        .hero-gradient {
+            background: linear-gradient(-45deg, #065f46, #052e16, #022c22, #064e3b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating Particles Effect */
+        .particles {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
+        }
+
+        /* Animated Text Gradient */
+        .text-gradient-animate {
+            background: linear-gradient(to right, #ffffff, #a7f3d0, #ffffff);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 4s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        /* Scroll Reveal Base */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Hide cursor on mobile */
+        @media (max-width: 1024px) {
+            body { cursor: auto; }
+            .custom-cursor { display: none; }
+        }
+
+        /* Link Underline Animation */
+        .link-underline {
+            position: relative;
+        }
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #065f46;
+            transition: width 0.3s ease;
+        }
+        .link-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Swiper Custom Pagination */
+        .swiper-pagination-bullet-active {
+            background: #f97316 !体积 !important;
+        }
+
+        /* FAQ Accordion Styling */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary svg {
+            transform: rotate(180deg);
+        }
+        details {
+            transition: all 0.3s ease-in-out;
+        }
+        details[open] {
+            background-color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Ajuste da Notificação de Saída (Exit Intent) */
+        #exit-intent-popup {
+            display: none; /* Escondido por padrão */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        #exit-intent-popup.active {
+            display: flex; /* Mostra como flex quando ativo */
+            opacity: 1;
         }
     </style>
-</head>
-<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+    <!-- Custom Cursor Script (moved here for better performance) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cursor = document.querySelector('.custom-cursor');
+            const interactives = document.querySelectorAll('.interactive, a, button, .card, summary'); // Added summary
 
-    <!-- Navbar Simples e Responsiva -->
-    <nav class="bg-white shadow-sm py-4 sticky top-0 z-50">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <a href="index.html" class="text-xl md:text-2xl font-bold text-green-600">Nutri Camila</a>
-            <a href="index.html" class="text-sm md:text-base text-gray-600 hover:text-green-600 transition flex items-center bg-gray-100 px-4 py-2 rounded-full">
-                <i class="fas fa-arrow-left mr-2"></i> Voltar
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            interactives.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        });
+    </script>
+</head>
+<body class="font-sans text-neutral-text bg-white">
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-secondary-orange z-[60] transition-all duration-150" style="width: 0%"></div>
+    <div class="custom-cursor"></div>
+
+    <!-- Exit Intent Pop-up -->
+    <div id="exit-intent-popup" class="fixed inset-0 z-[100] items-center justify-center bg-primary-dark/80 backdrop-blur-sm p-4">
+        <div class="bg-white rounded-[32px] max-w-lg w-full p-8 md:p-12 text-center relative shadow-2xl">
+            <button onclick="closeExitPopup()" class="absolute top-6 right-6 text-gray-400 hover:text-primary-green interactive">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="text-5xl mb-6">🎁</div>
+            <h2 class="font-serif text-3xl text-primary-dark mb-4 leading-tight">Espere! Não vá embora com as mãos vazias...</h2>
+            <p class="text-gray-600 mb-8">Mais de 5.000 pessoas já tomaram a decisão. Garanta seu E-book hoje e receba todos os bônus exclusivos antes que a oferta expire.</p>
+            <a href="#oferta" onclick="closeExitPopup()" class="block w-full bg-secondary-orange hover:bg-orange-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg interactive uppercase tracking-wide">
+                QUERO MINHA TRANSFORMAÇÃO AGORA
             </a>
         </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section Sobre -->
-    <header class="relative py-12 md:py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-            <!-- Imagem (Topo no Mobile) -->
-            <div class="w-full md:w-1/2" data-aos="fade-right">
-                <div class="relative max-w-sm mx-auto md:max-w-none">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-green-200 rounded-full opacity-50 animate-pulse"></div>
-                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-yellow-200 rounded-full opacity-50 animate-pulse" style="animation-delay: 1s;"></div>
-                    <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Frutas Frescas" class="relative rounded-3xl shadow-2xl z-10 w-full object-cover h-[400px] md:h-[500px]">
-                </div>
+    <!-- Sticky Bottom CTA -->
+    <div id="sticky-cta" class="fixed bottom-0 left-0 w-full bg-white/95 backdrop-blur-md border-t border-neutral-border z-[55] py-4 px-4 shadow-[0_-5px_20px_rgba(0,0,0,0.05)] md:py-3">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="hidden md:block">
+                <p class="text-primary-dark font-bold">Método Dra. Camila Rocha</p>
+                <p class="text-gray-500 text-xs italic">Acesso imediato e vitalício por apenas R$ 19,90</p>
             </div>
-            
-            <!-- Texto -->
-            <div class="w-full md:w-1/2 text-center md:text-left" data-aos="fade-left">
-                <span class="text-green-600 font-bold tracking-wider text-sm block mb-2">MINHA HISTÓRIA</span>
-                <h1 class="text-3xl md:text-5xl font-bold mb-6">Olá, eu sou a <br><span class="text-green-600">Camila Rocha</span></h1>
-                <p class="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
-                    Apaixonada por comida de verdade e por ver pessoas felizes com seus corpos. Minha jornada na nutrição começou quando percebi que as dietas tradicionais falhavam em considerar o principal: <strong>o ser humano por trás do prato.</strong>
-                </p>
-                <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
-                    Não acredito em "fechar a boca". Acredito em abrir a mente para novos sabores e hábitos.
-                </p>
-                
-                <!-- Estatísticas Mobile-Friendly -->
-                <div class="grid grid-cols-3 gap-2 md:gap-4 text-center">
-                    <div class="p-3 md:p-4 bg-green-50 rounded-lg">
-                        <span class="block text-2xl md:text-3xl font-bold text-green-600">10+</span>
-                        <span class="text-[10px] md:text-xs text-gray-600 uppercase font-bold">Anos Exp.</span>
-                    </div>
-                    <div class="p-3 md:p-4 bg-green-50 rounded-lg">
-                        <span class="block text-2xl md:text-3xl font-bold text-green-600">5k+</span>
-                        <span class="text-[10px] md:text-xs text-gray-600 uppercase font-bold">Pacientes</span>
-                    </div>
-                    <div class="p-3 md:p-4 bg-green-50 rounded-lg">
-                        <span class="block text-2xl md:text-3xl font-bold text-green-600">50+</span>
-                        <span class="text-[10px] md:text-xs text-gray-600 uppercase font-bold">Palestras</span>
-                    </div>
-                </div>
+            <a href="https://pay.sunize.com.br/aeTaPVVK" target="_blank" class="checkout-btn w-full md:w-auto bg-secondary-orange hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold text-sm shadow-md interactive uppercase tracking-wide">
+                ÚLTIMA CHANCE: GARANTIR ACESSO!
+            </a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-neutral-border" role="banner">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-primary-green font-serif font-bold text-xl md:text-2xl tracking-tight interactive cursor-pointer">
+                Dra. Camila Rocha
             </div>
+            <nav class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-wide" aria-label="Navegação Principal">
+                <a href="#metodo" class="hover:text-primary-green transition interactive">O Método</a>
+                <a href="#sobre" class="hover:text-primary-green transition interactive">Sobre</a>
+                <a href="#depoimentos" class="hover:text-primary-green transition interactive">Resultados</a>
+            </nav>
+            <a href="#oferta" class="bg-secondary-orange hover:bg-orange-600 text-white px-6 py-2 rounded-full font-bold text-sm transition-all hover:scale-105 active:scale-95 shadow-md interactive uppercase">
+                COMEÇAR AGORA
+            </a>
         </div>
     </header>
 
-    <!-- Formação e Valores -->
-    <section class="py-12 md:py-20 bg-pattern">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-3xl shadow-xl" data-aos="fade-up">
-                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-10">Minha Formação & Filosofia</h2>
-                
-                <div class="space-y-6 md:space-y-8">
-                    <div class="flex flex-col md:flex-row gap-4 items-center md:items-start text-center md:text-left">
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 text-xl">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg md:text-xl font-bold">Graduação e Especialização</h3>
-                            <p class="text-sm md:text-base text-gray-600">Formada em Nutrição pela USP, com Pós-graduação em Nutrição Clínica e Comportamental.</p>
-                        </div>
-                    </div>
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-32 pb-20 md:pt-48 md:pb-32 text-white">
+        <div class="particles" id="particles"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="inline-block bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 reveal">
+                ✨ Método Cientificamente Comprovado
+            </div>
+            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight max-w-4xl mx-auto text-gradient-animate">
+                Recupere sua saúde e autoestima com orientação médica especializada.
+            </h1>
+            <p class="text-lg md:text-xl mb-10 text-emerald-50/90 max-w-2xl mx-auto font-light reveal">
+                Um método seguro, comprovado cientificamente e desenhado para quem busca um emagrecimento definitivo sem fórmulas mágicas.
+            </p>
+            <div class="flex flex-col items-center gap-4 reveal active">
+                <a href="#oferta" class="bg-secondary-orange hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 active:scale-95 shadow-xl interactive">
+                    SIM! QUERO MINHA TRANSFORMAÇÃO AGORA
+                </a>
+                <p class="text-xs text-emerald-200/70 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path></svg>
+                    Acesso imediato e 100% seguro
+                </p>
+            </div>
+        </div>
+    </section>
 
-                    <div class="flex flex-col md:flex-row gap-4 items-center md:items-start text-center md:text-left">
-                        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 text-green-600 text-xl">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg md:text-xl font-bold">Abordagem Humanizada</h3>
-                            <p class="text-sm md:text-base text-gray-600">Trato a causa raiz do ganho de peso, que muitas vezes é emocional, e não apenas o sintoma.</p>
-                        </div>
+    <!-- Seção de Estatísticas (Impacto Imediato) -->
+    <section class="py-12 bg-white border-b border-neutral-border">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <div class="text-primary-green text-4xl md:text-5xl font-bold font-serif mb-2">
+                        <span class="counter" data-target="5000">0</span>+
                     </div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">Vidas Transformadas</p>
                 </div>
-
-                <div class="mt-10 md:mt-12 text-center">
-                    <a href="index.html#agendar" class="w-full md:w-auto inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-105">
-                        Quero Agendar Minha Consulta
-                    </a>
+                <div class="reveal reveal-delay-1">
+                    <div class="text-primary-green text-4xl md:text-5xl font-bold font-serif mb-2">
+                        <span class="counter" data-target="10">0</span>+
+                    </div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">Anos de Experiência</p>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <div class="text-primary-green text-4xl md:text-5xl font-bold font-serif mb-2">
+                        <span class="counter" data-target="98">0</span>%
+                    </div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">Satisfação</p>
+                </div>
+                <div class="reveal reveal-delay-3">
+                    <div class="text-primary-green text-4xl md:text-5xl font-bold font-serif mb-2">
+                        <span class="counter" data-target="50">0</span>+
+                    </div>
+                    <p class="text-gray-500 text-sm font-medium uppercase tracking-wider">Receitas Exclusivas</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-8 text-center text-sm">
-        <p>&copy; 2023 Nutricionista Camila Rocha.</p>
+    <!-- Problema/Dor -->
+    <section class="py-20 bg-neutral-light">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-dark mb-6">Você já se sentiu assim? <span class="text-xs align-top opacity-50">⚠️</span></h2>
+                <div class="w-20 h-1 bg-secondary-orange mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-neutral-border reveal reveal-delay-1 hover:border-emerald-200 transition-colors">
+                    <p class="text-primary-green font-bold mb-4 marker-pain">Efeito Sanfona</p>
+                    <p class="text-gray-600 italic text-sm">"Já tentei todas as dietas da moda, perco peso, mas ganho tudo de volta em poucas semanas."</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-neutral-border reveal reveal-delay-2 hover:border-emerald-200 transition-colors">
+                    <p class="text-primary-green font-bold mb-4 marker-pain">Falta de Energia</p>
+                    <p class="text-gray-600 italic text-sm">"Sinto cansaço constante e falta de disposição para as tarefas mais simples do dia a dia."</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-neutral-border reveal reveal-delay-3 hover:border-emerald-200 transition-colors">
+                    <p class="text-primary-green font-bold mb-4 marker-pain">Medo e Insegurança</p>
+                    <p class="text-gray-600 italic text-sm">"Tenho medo de desenvolver problemas de saúde e não sei em quem confiar para me guiar."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="metodo" class="py-20 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-green mb-4">O que você vai conquistar</h2>
+                <p class="text-gray-500">O Guia Digital definitivo para sua nova fase.</p>
+            </div>
+            <div class="swiper benefits-slider max-w-5xl mx-auto px-4">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-8 rounded-2xl border border-neutral-border text-center h-full">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2">Segurança Médica</h3>
+                            <p class="text-sm text-gray-600">Conteúdo escrito por quem entende de fisiologia e metabolismo.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-8 rounded-2xl border border-neutral-border text-center h-full">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 marker-result">Metabolismo Ativo</h3>
+                            <p class="text-sm text-gray-600">Estratégias para acelerar sua queima natural de gordura diariamente.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-8 rounded-2xl border border-neutral-border text-center h-full">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 marker-result">Autoestima</h3>
+                            <p class="text-sm text-gray-600">Sinta-se bem com seu corpo e suas roupas novamente em poucas semanas.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-8 rounded-2xl border border-neutral-border text-center h-full">
+                            <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <h3 class="font-bold text-lg mb-2 marker-result">Longevidade</h3>
+                            <p class="text-sm text-gray-600">Hábitos que garantem uma vida longa, saudável e plena.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination !-bottom-1"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que o produto entrega -->
+    <section class="py-20 bg-neutral-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-secondary-orange font-bold uppercase tracking-widest text-xs mb-2 block">Seu Kit Completo para a Transformação</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-dark mb-4">O que contém no seu E-book Exclusivo</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Tudo o que você precisa em um material digital de alta qualidade, pronto para ler no celular, tablet ou computador.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-neutral-border reveal interactive">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.206 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.794 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.794 5 16.5 5c1.706 0 3.332.477 4.5 1.253v13C19.832 18.477 18.206 18 16.5 18c-1.706 0-3.332.477-4.5 1.253"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-primary-dark text-lg mb-2 marker-solution">50+ Receitas Médicas</h3>
+                    <p class="text-sm text-gray-600">Cardápios selecionados pela Dra. Camila que unem sabor e densidade nutricional para saciedade máxima.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-neutral-border reveal reveal-delay-1 interactive">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-primary-dark text-lg mb-2 marker-solution">Guia de Substituições</h3>
+                    <p class="text-sm text-gray-600">Aprenda a trocar ingredientes calóricos por opções inteligentes que mantêm o prazer de comer.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-neutral-border reveal reveal-delay-2 interactive">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-primary-dark text-lg mb-2 marker-solution">Manual de Lista de Compras</h3>
+                    <p class="text-sm text-gray-600">Como escolher os melhores alimentos no mercado sem gastar fortunas com produtos "fit" desnecessários.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-neutral-border reveal interactive">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6 text-primary-green">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="font-bold text-primary-dark text-lg mb-2 marker-solution">Protocolo de Ciência</h3>
+                    <p class="text-sm text-gray-600">A explicação médica do porquê cada combinação de alimento foi escolhida para destravar seu peso.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="#oferta" class="inline-block bg-secondary-orange hover:bg-orange-600 text-white px-10 py-4 rounded-lg font-bold text-lg transition-all transform hover:scale-105 active:scale-95 shadow-xl interactive">
+                    QUERO MEU E-BOOK AGORA!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona / Próximos Passos -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-dark mb-4">Seu Caminho para a Transformação</h2>
+                <p class="text-gray-500">Simples, direto e sem complicações.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 relative">
+                <!-- Linha conectora (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-emerald-100 z-0"></div>
+                
+                <div class="relative z-10 text-center reveal">
+                    <div class="w-16 h-16 bg-primary-green text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg border-4 border-white">1</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Compre com Segurança</h3>
+                    <p class="text-sm text-gray-600">Clique no botão e finalize seu pedido em nossa plataforma 100% criptografada.</p>
+                </div>
+
+                <div class="relative z-10 text-center reveal reveal-delay-1">
+                    <div class="w-16 h-16 bg-primary-green text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg border-4 border-white">2</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Acesso por E-mail</h3>
+                    <p class="text-sm text-gray-600">Receba seus dados de acesso instantaneamente por e-mail e comece agora mesmo.</p>
+                </div>
+
+                <div class="relative z-10 text-center reveal reveal-delay-2">
+                    <div class="w-16 h-16 bg-primary-green text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg border-4 border-white">3</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Aplique o Método</h3>
+                    <p class="text-sm text-gray-600">Siga o passo a passo prático desenhado pela Dra. Camila para o seu dia a dia.</p>
+                </div>
+
+                <div class="relative z-10 text-center reveal reveal-delay-3">
+                    <div class="w-16 h-16 bg-secondary-orange text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-2xl shadow-lg border-4 border-white">4</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Resultados Reais</h3>
+                    <p class="text-sm text-gray-600">Sinta a diferença na sua saúde e energia já nas primeiras refeições.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-20 bg-neutral-light overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-dark mb-4">Vidas Transformadas</h2>
+                <p class="text-gray-500">Histórias reais de quem confiou no método.</p>
+            </div>
+            <div class="swiper testimonials-slider max-w-4xl mx-auto px-10 relative">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="bg-white p-10 rounded-3xl shadow-lg text-center reveal active interactive">
+                            <p class="text-lg text-gray-700 mb-6 italic leading-relaxed">"Eliminei 12kg em 3 meses. O suporte da Dra. Camila e a clareza do método foram fundamentais para eu não desistir desta vez."</p>
+                            <h4 class="font-bold text-primary-dark text-xl">Mariana Silveira</h4>
+                            <span class="text-secondary-orange text-sm font-medium">Empresária, 34 anos</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-10 rounded-3xl shadow-lg text-center interactive">
+                            <p class="text-lg text-gray-700 mb-6 italic leading-relaxed">"Recuperei minha disposição. Antes vivia cansada, hoje tenho energia para treinar e brincar com meus filhos."</p>
+                            <h4 class="font-bold text-primary-dark text-xl">Fernanda Rocha</h4>
+                            <span class="text-secondary-orange text-sm font-medium">Arquiteta, 41 anos</span>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-white p-10 rounded-3xl shadow-lg text-center interactive">
+                            <p class="text-lg text-gray-700 mb-6 italic leading-relaxed">"Pela primeira vez em anos, meus exames de sangue estão perfeitos. É muito mais do que estética."</p>
+                            <h4 class="font-bold text-primary-dark text-xl">Ricardo Mendes</h4>
+                            <span class="text-secondary-orange text-sm font-medium">Advogado, 45 anos</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="swiper-button-next !text-primary-green !hidden md:!flex"></div>
+                <div class="swiper-button-prev !text-primary-green !hidden md:!flex"></div>
+                <div class="swiper-pagination !bottom-[-40px]"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dra. Camila na Mídia / Reconhecimento -->
+    <section class="py-16 bg-white border-y border-neutral-border">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-gray-400 text-xs font-bold uppercase tracking-[0.2em] mb-10">Reconhecimento e Presença na Mídia</p>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
+                <!-- Logos Mockup - Grayscale to Color on Hover -->
+                <div class="grayscale hover:grayscale-0 transition duration-500 cursor-help">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_G1.svg" alt="G1" class="h-6">
+                </div>
+                <div class="grayscale hover:grayscale-0 transition duration-500 cursor-help">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Vogue_Logo.svg" alt="Vogue" class="h-4">
+                </div>
+                <div class="grayscale hover:grayscale-0 transition duration-500 cursor-help">
+                    <img src="https://upload.wikimedia.org/wikipedia/pt/d/d4/Logotipo_do_R7.png" alt="R7" class="h-8">
+                </div>
+                <div class="grayscale hover:grayscale-0 transition duration-500 cursor-help">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/CNN_Brasil_logo.svg" alt="CNN Brasil" class="h-5">
+                </div>
+                <!-- Selo de Especialista -->
+                <div class="grayscale hover:grayscale-0 transition duration-500 flex items-center gap-2 border-l pl-8 border-gray-200">
+                    <svg class="w-6 h-6 text-primary-green" fill="currentColor" viewBox="0 0 20 20"><path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z"></path></svg>
+                    <span class="text-[10px] font-bold text-primary-dark leading-tight uppercase">Membro de<br>Associações Médicas</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autoridade -->
+    <section id="sobre" class="py-20 bg-primary-dark text-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 reveal">
+                    <div class="relative">
+                        <div class="aspect-[4/5] bg-gray-300 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 interactive" aria-label="Foto da Dra. Camila Rocha, médica especialista em emagrecimento e longevidade">
+                            <img src="https://i.imgur.com/5jQcQ3Q.jpeg" alt="Dra. Camila Rocha" class="w-full h-full object-cover" loading="lazy" width="400" height="500">
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 reveal reveal-delay-2">
+                    <span class="text-secondary-orange font-bold tracking-widest text-sm uppercase mb-4 block">Sua Mentora</span>
+                    <h2 class="font-serif text-4xl mb-6 leading-tight">Dra. Camila Rocha</h2>
+                    <p class="text-blue-100 mb-6 text-lg leading-relaxed">
+                        Médica especialista em emagrecimento e longevidade, com mais de 10 anos de experiência clínica. Minha missão é democratizar o acesso ao emagrecimento saudável, unindo rigor médico com um olhar humano e inspirador.
+                    </p>
+                    <div class="bg-white/10 border-l-4 border-secondary-orange p-4 mb-8">
+                        <p class="text-sm font-medium italic">"Meu método não foca apenas na balança, mas na reprogramação celular para um corpo que trabalha a seu favor."</p>
+                    </div>
+                    <ul class="space-y-4 text-blue-50">
+                        <li class="flex items-start gap-3">
+                            <span class="text-secondary-orange">✔</span>
+                            <span>+5.000 vidas transformadas através do método.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-secondary-orange">✔</span>
+                            <span>Especialização Internacional em Nutrologia.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bônus Exclusivos -->
+    <section class="py-20 bg-emerald-50/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary-green font-bold uppercase tracking-widest text-xs mb-2 block">Presentes para você</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-dark mb-4">Bônus Exclusivos Inclusos Hoje</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Ao garantir seu acesso agora, você também recebe estas ferramentas poderosas para acelerar seus resultados.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 reveal interactive">
+                    <div class="text-3xl mb-4 text-secondary-orange">🥗</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Guia: Receitas Detox 15 Min</h3>
+                    <p class="text-sm text-gray-600 mb-4">Pratos deliciosos e rápidos que desinflamam seu corpo naturalmente.</p>
+                    <div class="text-xs font-bold">
+                        <span class="text-gray-400 line-through">Valor: R$ 47,00</span>
+                        <span class="text-primary-green ml-2">GRÁTIS</span>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 reveal reveal-delay-1 interactive">
+                    <div class="text-3xl mb-4 text-secondary-orange">🛒</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Lista de Compras Inteligente</h3>
+                    <p class="text-sm text-gray-600 mb-4">Saiba exatamente o que comprar no mercado para economizar e emagrecer.</p>
+                    <div class="text-xs font-bold">
+                        <span class="text-gray-400 line-through">Valor: R$ 29,00</span>
+                        <span class="text-primary-green ml-2">GRÁTIS</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 reveal reveal-delay-2 interactive">
+                    <div class="text-3xl mb-4 text-secondary-orange">📅</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Planner de Hábitos Diários</h3>
+                    <p class="text-sm text-gray-600 mb-4">Um rastreador visual para manter você motivada e focada na sua meta.</p>
+                    <div class="text-xs font-bold">
+                        <span class="text-gray-400 line-through">Valor: R$ 37,00</span>
+                        <span class="text-primary-green ml-2">GRÁTIS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <p class="text-sm font-medium text-primary-green mb-6">Total em bônus: <span class="line-through text-gray-400">R$ 113,00</span> — Hoje para você: R$ 0,00</p>
+                <a href="#oferta" class="inline-block bg-primary-green hover:bg-primary-dark text-white px-8 py-3 rounded-full font-bold text-sm transition-all interactive uppercase tracking-wide">
+                    Quero meus bônus e acesso ao método
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Acessar o Produto -->
+    <section class="py-20 bg-white border-y border-neutral-border">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-dark mb-4">Como você vai acessar?</h2>
+                <p class="text-gray-500">Tudo muito simples para você começar sua jornada agora mesmo.</p>
+            </div>
+            <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="text-center reveal">
+                    <div class="w-16 h-16 bg-emerald-100 text-primary-green rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-xl">1</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Você Paga</h3>
+                    <p class="text-sm text-gray-600">Finalize sua compra com total segurança e garantia em nossa plataforma.</p>
+                </div>
+                <div class="text-center reveal reveal-delay-1">
+                    <div class="w-16 h-16 bg-emerald-100 text-primary-green rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-xl">2</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Recebe no E-mail</h3>
+                    <p class="text-sm text-gray-600">Você receberá imediatamente o link de acesso, seu e-mail e sua senha.</p>
+                </div>
+                <div class="text-center reveal reveal-delay-2">
+                    <div class="w-16 h-16 bg-emerald-100 text-primary-green rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-xl">3</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Acesse sua Compra</h3>
+                    <p class="text-sm text-gray-600">Dentro da plataforma oficial, clique no botão "Acessar minha compra".</p>
+                </div>
+                <div class="text-center reveal reveal-delay-3">
+                    <div class="w-16 h-16 bg-secondary-orange text-white rounded-full flex items-center justify-center mx-auto mb-6 font-bold text-xl">4</div>
+                    <h3 class="font-bold text-primary-dark mb-2">Drive de Receitas</h3>
+                    <p class="text-sm text-gray-600">Pronto! Você entra no Google Drive com mais de 1200 receitas para emagrecer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta -->
+    <section id="oferta" class="py-20 bg-neutral-light oferta">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden border border-neutral-border reveal">
+                <div class="p-8 md:p-12 text-center border-b border-neutral-border">
+                    <h2 class="font-serif text-3xl md:text-5xl text-primary-dark mb-4">Comece sua jornada hoje</h2>
+                    <p class="text-gray-500 mb-8 text-lg">Acesso imediato ao método completo por um preço simbólico.</p>
+                    
+                    <!-- Urgency Counter -->
+                    <div class="mb-10 bg-orange-50 inline-block px-6 py-4 rounded-2xl border border-orange-100">
+                        <p class="text-secondary-orange text-xs font-bold uppercase tracking-widest mb-2">Oferta expira em:</p>
+                        <div id="countdown" class="flex items-center justify-center gap-4 text-3xl md:text-4xl font-mono font-bold text-primary-dark">
+                            <div class="bg-white px-3 py-1 rounded shadow-inner" id="minutes">15</div>
+                            <span class="animate-pulse">:</span>
+                            <div class="bg-white px-3 py-1 rounded shadow-inner" id="seconds">00</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <span class="text-gray-400 line-through text-xl">De R$ 97,00</span>
+                        <div class="flex items-center justify-center gap-2">
+                            <span class="text-primary-green text-6xl md:text-7xl font-bold font-serif">R$ 19,90</span>
+                        </div>
+                    </div>
+                    <a href="https://pay.sunize.com.br/aeTaPVVK" target="_blank" class="inline-block w-full md:w-auto px-12 py-6 bg-secondary-orange hover:bg-orange-600 text-white rounded-xl font-black text-xl md:text-2xl transition-all hover:scale-105 active:scale-95 shadow-lg hover:shadow-orange-200 uppercase tracking-tighter interactive">
+                        GARANTIR MEU ACESSO IMEDIATO POR R$ 19,90
+                    </a>
+                </div>
+                <div class="bg-gray-50 p-6 flex flex-wrap justify-center gap-8 text-xs font-bold text-gray-400 uppercase tracking-widest">
+                    <div class="flex items-center gap-1">
+                        <svg class="w-4 h-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                        <span>SSL Seguro</span>
+                    </div>
+                    <span>Garantia de 7 dias</span>
+                    <span>Pagamento Seguro</span>
+                    <span>Acesso Vitalício</span>
+                </div>
+            </div>
+
+            <!-- Garantia Reforçada -->
+            <div class="max-w-3xl mx-auto mt-16 p-8 rounded-3xl bg-emerald-50 border-2 border-dashed border-emerald-200 flex flex-col md:flex-row items-center gap-8 reveal" role="region" aria-label="Garantia de Satisfação">
+                <div class="flex-shrink-0 w-24 h-24 bg-white rounded-full shadow-md flex items-center justify-center">
+                    <svg class="w-16 h-16 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h3 class="font-bold text-primary-dark text-xl mb-2">Risco Zero: Garantia Incondicional de 7 Dias</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        Sua satisfação é nossa prioridade absoluta. Se em até 7 dias você sentir que o método não é para você, basta nos enviar um e-mail. Devolvemos <strong>cada centavo</strong> do seu investimento, sem perguntas e sem letras miúdas. Você não tem nada a perder.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-white faq-section" role="region" aria-label="Perguntas Frequentes">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-3xl md:text-4xl text-primary-dark mb-4">Dúvidas Frequentes</h2>
+                <p class="text-gray-500">Tudo o que você precisa saber para começar com confiança.</p>
+            </div>
+            
+            <div class="space-y-4">
+                <details class="group border border-neutral-border rounded-2xl p-6 transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-primary-dark" aria-controls="faq-answer-1">
+                        <span>Já tentei todas as dietas e nada funcionou. Por que este método seria diferente?</span>
+                        <svg class="w-5 h-5 text-secondary-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm leading-relaxed">
+                        A maioria das dietas foca apenas em restrição calórica. O método da Dra. Camila foca na <strong>reprogramação metabólica</strong>. Atacamos a causa raiz (inflamação e resistência insulínica), fazendo com que seu corpo queira queimar gordura naturalmente, em vez de estocá-la.
+                    </div>
+                </details>
+
+                <details class="group border border-neutral-border rounded-2xl p-6 transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-primary-dark" aria-controls="faq-answer-2">
+                        <span>Vou ter que passar fome ou seguir uma dieta restritiva?</span>
+                        <svg class="w-5 h-5 text-secondary-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm leading-relaxed">
+                        Absolutamente não. O plano prioriza a densidade nutricional. Você aprenderá a fazer combinações inteligentes que promovem saciedade prolongada. Comer bem é o segredo para emagrecer de forma definitiva.
+                    </div>
+                </details>
+
+                <details class="group border border-neutral-border rounded-2xl p-6 transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-primary-dark" aria-controls="faq-answer-3">
+                        <span>Como recebo o acesso ao E-book?</span>
+                        <svg class="w-5 h-5 text-secondary-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm leading-relaxed">
+                        Assim que o seu pagamento for processado, você receberá automaticamente no seu e-mail cadastrado os dados para download do material digital em PDF.
+                    </div>
+                </details>
+
+                <details class="group border border-neutral-border rounded-2xl p-6 transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-primary-dark" aria-controls="faq-answer-4">
+                        <span>Em quanto tempo verei os primeiros resultados?</span>
+                        <svg class="w-5 h-5 text-secondary-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm leading-relaxed">
+                        Os resultados variam, mas a maioria dos nossos alunos relata uma diminuição visível no inchaço e um aumento significativo na disposição já nos primeiros 7 a 10 dias de aplicação do método.
+                    </div>
+                </details>
+
+                <details class="group border border-neutral-border rounded-2xl p-6 transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-primary-dark" aria-controls="faq-answer-5">
+                        <span>Como recebo o material e por quanto tempo terei acesso?</span>
+                        <svg class="w-5 h-5 text-secondary-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm leading-relaxed">
+                        O acesso é <strong>imediato</strong>. Assim que o pagamento for aprovado, você receberá um e-mail com seus dados de login para nossa plataforma exclusiva. O acesso é vitalício, permitindo que você reveja o conteúdo sempre que precisar.
+                    </div>
+                </details>
+
+                <details class="group border border-neutral-border rounded-2xl p-6 transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-primary-dark" aria-controls="faq-answer-6">
+                        <span>É seguro realizar a compra online?</span>
+                        <svg class="w-5 h-5 text-secondary-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm leading-relaxed">
+                        Totalmente seguro. Utilizamos a Sunize, uma das maiores e mais seguras plataformas de pagamentos do Brasil, com criptografia de ponta e proteção total de dados bancários.
+                    </div>
+                </details>
+
+                <details class="group border border-neutral-border rounded-2xl p-6 transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold text-primary-dark" aria-controls="faq-answer-7">
+                        <span>Preciso de equipamentos ou suplementos caros?</span>
+                        <svg class="w-5 h-5 text-secondary-orange transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="mt-4 text-gray-600 text-sm leading-relaxed">
+                        Não. O método utiliza alimentos comuns que você já encontra no mercado. Não exigimos o uso de suplementos caros ou "shakes" milagrosos. O foco é em comida de verdade e ajustes simples no estilo de vida.
+                    </div>
+                </details>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-500 text-sm">Dúvidas sobre o acesso? Entre em contato pelo e-mail de suporte disponível na confirmação da compra.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-text text-gray-400 py-12" role="contentinfo">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center border-b border-gray-700 pb-8 mb-8">
+                <div class="text-white font-serif font-bold text-xl mb-4 md:mb-0">
+                    Dra. Camila Rocha
+                </div>
+                <div class="flex space-x-6 text-sm" role="navigation" aria-label="Links do Rodapé">
+                    <a href="#" class="hover:text-white transition interactive link-underline">Privacidade</a>
+                    <a href="#" class="hover:text-white transition interactive link-underline">Termos de Uso</a>
+                    <a href="#" class="hover:text-white transition interactive link-underline">Contato</a>
+                </div>
+            </div>
+            <!-- Selos de Segurança Adicionais -->
+            <div class="flex justify-center gap-6 mb-8 opacity-40 grayscale">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Norton_LifeLock_logo.svg" alt="Norton Secured" class="h-6">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/McAfee_logo.svg" alt="McAfee Secure" class="h-5">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Google_Safe_Browsing_Logo.svg" alt="Google Safe Browsing" class="h-6">
+            </div>
+            <div class="text-center text-xs">
+                <p>&copy; 2024 Emagrecimento Saudável com Dra. Camila Rocha. Todos os direitos reservados.</p>
+                <p class="mt-4 max-w-2xl mx-auto opacity-50 italic">
+                    Aviso Legal: Os resultados podem variar de pessoa para pessoa. Acompanhamento médico é fundamental antes de iniciar qualquer mudança drástica na dieta ou rotina de exercícios.
+                </p>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper.js Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
-        AOS.init({ duration: 1000, once: true });
+        // Sticky CTA Visibility Logic
+        window.addEventListener('scroll', () => {
+            const stickyCta = document.getElementById('sticky-cta');
+            const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            
+            if (scrollPercent > 35) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+
+        // Lógica da Notificação de Saída (Desktop e Celular)
+        let popupShown = false;
+        const exitPopup = document.getElementById('exit-intent-popup');
+
+        function showExitPopup() {
+            if (!popupShown) {
+                exitPopup.classList.add('active');
+                popupShown = true;
+            }
+        }
+
+        function closeExitPopup() {
+            exitPopup.classList.remove('active');
+        }
+
+        // Detector para Desktop: Mouse saindo da janela
+        document.addEventListener('mouseleave', (e) => {
+            if (e.clientY < 0) showExitPopup();
+        });
+
+        // Detector para Celular: Usuário trocando de aba ou minimizando
+        document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'hidden') {
+                showExitPopup();
+            }
+        });
+
+        // Purchase Interaction Logic
+        document.querySelectorAll('.checkout-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const originalText = this.innerHTML;
+                this.classList.add('btn-success');
+                this.innerHTML = "✅ PROCESSANDO...";
+                // Redirection happens naturally after click due to href
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        });
+
+        // Custom Cursor Logic
+        // Particles Generation
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 20;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            const size = Math.random() * 15 + 5 + 'px';
+            particle.style.width = size;
+            particle.style.height = size;
+            
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = Math.random() * 10 + 10 + 's';
+            
+            particlesContainer.appendChild(particle);
+        }
+
+        // Scroll Reveal Logic (Intersection Observer)
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Descomente abaixo se quiser que a animação ocorra apenas uma vez
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        // Count-up Animation Logic
+        const countUp = (el) => {
+            const target = +el.getAttribute('data-target');
+            const count = +el.innerText;
+            const speed = 200; // Alterar para ajustar velocidade
+            const inc = target / speed;
+
+            if (count < target) {
+                el.innerText = Math.ceil(count + inc);
+                setTimeout(() => countUp(el), 1);
+            } else {
+                el.innerText = target;
+            }
+        };
+
+        // Observer for Stats
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => countUp(counter));
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.counter')?.closest('section');
+        if (statsSection) statsObserver.observe(statsSection);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // Carrossel de Benefícios
+        const benefitsSwiper = new Swiper('.benefits-slider', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: true,
+            autoplay: { delay: 3000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            breakpoints: {
+                640: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1280: { slidesPerView: 4 }
+            }
+        });
+
+        // Carrossel de Depoimentos
+        const testimonialsSwiper = new Swiper('.testimonials-slider', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            grabCursor: true,
+            autoplay: { delay: 5000, pauseOnMouseEnter: true },
+            navigation: { /* ARIA attributes are usually handled by Swiper for these buttons */
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: { el: '.swiper-pagination', clickable: true }
+        });
+
+        // Urgency Counter Logic
+        function startCountdown(duration) {
+            let timer = duration, minutes, seconds;
+            const minDisplay = document.getElementById('minutes');
+            const secDisplay = document.getElementById('seconds');
+
+            setInterval(() => {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                // Add smooth fade on change
+                if (secDisplay.textContent != (seconds < 10 ? "0" + seconds : seconds)) {
+                    secDisplay.style.opacity = 0;
+                    setTimeout(() => {
+                        secDisplay.textContent = seconds < 10 ? "0" + seconds : seconds;
+                        secDisplay.style.opacity = 1;
+                    }, 100);
+                }
+                
+                minDisplay.textContent = minutes < 10 ? "0" + minutes : minutes;
+
+                if (--timer < 0) {
+                    timer = duration; // Reset to 15 mins
+                }
+            }, 1000);
+        }
+
+        window.onload = () => {
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+            startCountdown(15 * 60);
+        };
     </script>
+
 </body>
 </html>
